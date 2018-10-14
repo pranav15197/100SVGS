@@ -1,7 +1,7 @@
 <div id="app">
   <button @click="toggle_menu">Show Menu</button>
-  <transition class="menu-popover" v-if="menu_show">
-    <ul class="MenuPopover">
+  <transition name="menu-popover" mode="out-in">
+    <ul class="MenuPopover" v-if="menu_show">
       <li>Payments</li>
       <li>Subscription</li>
       <li>Connect</li>
@@ -33,10 +33,24 @@
     transform: rotateY(0deg);
   }
   .menu-popover-enter-active{
-    transition: opacity, transform 2000ms ease-out;
+    transition: opacity, transform 200ms ease-in;
+  }
+  .menu-popover-leave{
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+  .menu-popover-leave-to{
+    opacity: 0;
+    transform: rotateY(50deg);
+  }
+  .menu-popover-leave-active{
+    transition: opacity, transform 200ms ease-out;
   }
   .MenuPopover{
-    background-color: blue
+    background-color: blue;
+    padding: 20px;
+    height: 200px;
+    width: 100px;
   }
 </style>
 <!-- 
