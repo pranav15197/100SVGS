@@ -1,57 +1,27 @@
 <div id="app">
-  <button @click="toggle_menu">Show Menu</button>
-  <transition name="menu-popover" mode="out-in">
-    <ul class="MenuPopover" v-if="menu_show">
-      <li>Payments</li>
-      <li>Subscription</li>
-      <li>Connect</li>
-    </ul>
+  <button @click="show = !show">Toggle</button>
+  <transition name="fade">
+    <div v-if="show">
+      Hey!!
+    </div>
   </transition>
-  
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
   var app = new Vue({
     el: "#app",
     data:{
-      menu_show: false,
-    },
-    methods:{
-      toggle_menu(){
-        this.menu_show = this.menu_show == false
-      }
+      show: false
     }
   })
 </script>
 <style>
-  .menu-popover-enter{
-    opacity: 0;
-    transform: rotateY(50deg);
-  }
-  .menu-popover-enter-to{
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-  .menu-popover-enter-active{
-    transition: opacity, transform 200ms ease-in;
-  }
-  .menu-popover-leave{
-    opacity: 1;
-    transform: rotateY(0deg);
-  }
-  .menu-popover-leave-to{
-    opacity: 0;
-    transform: rotateY(50deg);
-  }
-  .menu-popover-leave-active{
-    transition: opacity, transform 200ms ease-out;
-  }
-  .MenuPopover{
-    background-color: blue;
-    padding: 20px;
-    height: 200px;
-    width: 100px;
-  }
+ .fade-enter-active, .fade-leave-active{
+  transition: opacity 2.5s ease-out;
+ }
+ .fade-enter, .fade-leave-to{
+  opacity: 0;
+ }
 </style>
 <!-- 
   Tutorial Referred - https://medium.com/vue-mastery/how-to-create-vue-js-transitions-6487dffd0baa
@@ -62,4 +32,7 @@
   <transition> element in vuejs
     v-enter v-enter-active v-enter-to
     v-leave v-leave-active v-leave-to
+
+  video: https://www.youtube.com/watch?v=pE_mBInjJKE
+
  -->
