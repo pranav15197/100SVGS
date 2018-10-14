@@ -1,7 +1,7 @@
 <div id="app">
   <button @click="show = !show">Toggle</button>
   <transition name="fade">
-    <div v-if="show">
+    <div v-if="show" class="my_heading">
       Hey!!
     </div>
   </transition>
@@ -16,11 +16,18 @@
   })
 </script>
 <style>
+  .my_heading{
+    font-size: 40px;
+  }
  .fade-enter-active, .fade-leave-active{
-  transition: opacity 2.5s ease-out;
+  transition: all 200ms ease-out;
  }
  .fade-enter, .fade-leave-to{
   opacity: 0;
+  font-size: 20px;
+ }
+ .fade-enter-to, .fade-leave{
+   font-size: 40px;
  }
 </style>
 <!-- 
