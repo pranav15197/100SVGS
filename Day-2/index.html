@@ -1,8 +1,8 @@
 <div id="app">
-  <button @click="show = !show">Toggle</button>
+  <button style="margin:10px" @click="show = !show">Toggle</button>
   <transition name="drop">
-    <div v-if="show" class="my_heading">
-      Hey!!
+    <div v-if="show" class="my_menu">
+      
     </div>
   </transition>
 </div>
@@ -16,8 +16,33 @@
   })
 </script>
 <style>
-  
+  .my_menu{
+    background-color: aquamarine;
+    margin: 10px;
+    height: 400px;
+    width: 200px;
+    padding: 40px;
+    border-radius: 10px;
+    transform-origin: top;
+  }
+
+  .drop-enter, .drop-leave-to{
+    opacity: 0;
+    transform: rotateX(45deg);
+  }
+
+  .drop-enter-active, .drop-leave-active{
+    transition: all 500ms ease-out;
+  }
+
+  .drop-enter-to, .drop-leave{
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+
 </style>
 <!-- 
-
+transform origin needs to be provided in css
+difference in ease-in, ease-out etc.
  -->
