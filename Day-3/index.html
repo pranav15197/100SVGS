@@ -1,0 +1,48 @@
+<div id="app">
+  <button style="margin:10px" @click="show = !show">Toggle</button>
+  <transition name="drop">
+    <div v-if="show" class="my_menu">
+      
+    </div>
+  </transition>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  var app = new Vue({
+    el: "#app",
+    data:{
+      show: false
+    }
+  })
+</script>
+<style>
+  .my_menu{
+    background-color: aquamarine;
+    margin: 10px;
+    height: 400px;
+    width: 200px;
+    padding: 40px;
+    border-radius: 10px;
+    transform-origin: top;
+  }
+
+  .drop-enter, .drop-leave-to{
+    opacity: 0;
+    transform: rotateX(20deg);
+  }
+
+  .drop-enter-active, .drop-leave-active{
+    transition: all 500ms ease-in-out;
+  }
+
+  .drop-enter-to, .drop-leave{
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+
+
+</style>
+<!-- 
+transform origin needs to be provided in css
+difference in ease-in, ease-out etc.
+ -->
