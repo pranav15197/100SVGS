@@ -1,48 +1,73 @@
 <div id="app">
-  <button style="margin:10px" @click="show = !show">Toggle</button>
-  <transition name="drop">
-    <div v-if="show" class="my_menu">
-      
-    </div>
-  </transition>
+  <svg id="my-svg" :width="width" :height="height" xmlns="http://www.w3.org/2000/svg"
+    :transform="transform"
+    :x="x"
+    :y="y"
+  >
+    <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+    <g>
+     <title>background</title>
+     <rect fill="#fff" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+     <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+      <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+     </g>
+    </g>
+    <g>
+     <title>Layer 1</title>
+     <rect id="svg_1" height="308" width="408" y="39.4375" x="33.5" stroke-width="1.5" stroke="#000" fill="#fff"/>
+     <rect id="svg_2" height="221" width="78" y="82.4375" x="444.5" stroke-width="1.5" stroke="#000" fill="#fff"/>
+     <rect id="svg_3" height="219" width="347" y="85.4375" x="57.5" stroke-width="1.5" stroke="#000" fill="#fff"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_4" y2="87.4375" x2="58.5" y1="38.4375" x1="34.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_5" y2="346.4375" x2="35.5" y1="347.4375" x1="35.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_6" y2="321.4375" x2="57.5" y1="319.4375" x1="53.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_7" y2="304.4375" x2="58.5" y1="347.4375" x1="33.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_9" y2="39.4375" x2="442.5" y1="84.4375" x1="402.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_10" y2="346.4375" x2="440.5" y1="303.4375" x1="403.5" stroke-width="1.5" stroke="#000" fill="none"/>
+     <line stroke-linecap="undefined" stroke-linejoin="undefined" id="svg_11" y2="120.4375" x2="556.5" y1="120.4375" x1="555.5" stroke-width="1.5" stroke="#000" fill="none"/>
+    </g>
+   </svg>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
   var app = new Vue({
     el: "#app",
     data:{
-      show: false
+      width:100,
+      height:70,
+      x:100,
+      y:100,
+      angle:0
+    },
+    computed:{
+      originX(){
+        return this.x - this.width/2
+      },
+      originY(){
+        return this.y - this.height/2
+      },
+      transform(){
+        return "rotate(" + this.angle +")"
+      }
+    },
+    created(){
+      window.addEventListener('keydown', e=>{
+        if(e.keyCode == 37) this.turn(-1)
+        else if(e.keyCode == 39) this.turn(1)
+      })
+    },
+    methods:{
+      turn(dir){
+        this.angle += dir * 10
+      }
     }
   })
 </script>
 <style>
-  .my_menu{
-    background-color: aquamarine;
-    margin: 10px;
-    height: 400px;
-    width: 200px;
-    padding: 40px;
-    border-radius: 10px;
-    transform-origin: top;
-  }
-
-  .drop-enter, .drop-leave-to{
-    opacity: 0;
-    transform: rotateX(20deg);
-  }
-
-  .drop-enter-active, .drop-leave-active{
-    transition: all 500ms ease-in-out;
-  }
-
-  .drop-enter-to, .drop-leave{
-    transform: rotateX(0deg);
-    opacity: 1;
-  }
-
-
+svg rect,line{
+  transform: scale(0.18)
+}
 </style>
 <!-- 
-transform origin needs to be provided in css
-difference in ease-in, ease-out etc.
+I try to make a car with svg - https://gigigo.com/2017/06/27/animating-a-car-with-vuejs/?lang=en
+use tag inside of an svg for providing svg
  -->
