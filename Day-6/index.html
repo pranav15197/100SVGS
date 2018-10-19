@@ -1,7 +1,17 @@
 <div id="app">
   <svg width="200" height="200">
-    <rect x="0" y="0" width="20" height="20" fill="blue" ></rect>
-    <text x="5" y="35">This is the text</text>
+    <path d="M 150 0 L 150 90 H 0"
+      stroke="red" fill="lime" stroke-width="2"></path>
+    <rect x="5" y="5" width="20" height="20" fill="blue" ></rect>
+    <text x="5" y="40">This is the text</text>
+    <circle cx="15" cy="55" r="10" fill="#529fca"></circle>
+    <line x1=5 y1=70 x2=100 y2=70 stroke="red"></line>
+    <path id="myPath" d="M 0 100 L 150 150" stroke="red"></path>
+    <text>
+      <textPath xlink:href="#myPath">
+        This is awesome
+      </textPath>
+    </text>
   </svg>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -22,4 +32,7 @@
 <!-- 
 Going back to basics - this is following a in dept tutorial
 https://flaviocopes.com/svg/
+- position of text seems to be from the middle of the text.
+- for circle you position the center - (cx, cy)
+- textpath is fucking awesome
  -->
