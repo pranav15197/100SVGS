@@ -1,16 +1,38 @@
 <div id="app">
+  Your Score :{{scoreTrimmed}}
+  <button @click="increaseScore">Increase Score</button>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
 <script>
   var app = new Vue({
     el: "#app",
     data:{
-      show: false
+      demo: {
+        score: 0
+      }
+    },
+    computed : {
+      scoreTrimmed(){
+        return this.demo.score.toFixed(2)
+      }
+    },
+    methods:{
+      increaseScore(){
+        var tween = TweenLite.to(this.demo, 1, {score:this.demo.score + 10})
+      }
     }
   })
 </script>
 <style>
+  body{
+    margin: 0
+  }
 </style>
 <!-- 
+https://snipcart.com/blog/vuejs-transitions-animations
+Using Tween Lite.js
 
  -->
