@@ -1,6 +1,10 @@
 <div id="app">
   Your Score :{{scoreTrimmed}}
   <button @click="increaseScore">Increase Score</button>
+  <svg style="margin:20px">
+      <line x1=0 y1=0 x2=100 y2=0 stroke="gray" stroke-width="5" ></line>
+      <line x1=0 y1=0 :x2="scoreTrimmed" y2=0 stroke="red" stroke-width="5" ></line>
+  </svg>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -21,6 +25,7 @@
     },
     methods:{
       increaseScore(){
+        // keep the button disabled till this tween is complete
         var tween = TweenLite.to(this.demo, 1, {score:this.demo.score + 10})
       }
     }
