@@ -1,0 +1,24 @@
+<head>
+    <style>
+      .line-drawing{
+        stroke: #E0E0E0;
+        stroke-dasharray: 246.301, 246.301; 
+        stroke-dashoffset: 246;
+        fill: transparent;
+        animation: draw 1s linear forwards;
+      }
+
+      @keyframes draw{
+        0% {stroke-dashoffset: 246}
+        100% {stroke-dashoffset: 0}
+      }
+    </style>
+  </head>
+  <body>
+      <svg id="logo" class="line-drawing hide" width="84" height="84" xmlns="http://www.w3.org/2000/svg">
+        <path class="darker" d="M 80.889194,41.80541 C 80.889194,63.45198 63.341174,81 41.694594,81 20.048024,81 2.5,63.45198 2.5,41.80541 2.5,20.158827 20.048024,2.61081 41.694594,2.61081 c 21.64658,0 39.1946,17.548017 39.1946,39.1946 z" ></path>
+      </svg>
+  <!-- Using css aniations
+  https://css-tricks.com/svg-line-animation-works/
+  -->
+  </body>
