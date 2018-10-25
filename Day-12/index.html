@@ -6,12 +6,12 @@
         stroke-dasharray: 1616.130859375, 1616.130859375; 
         stroke-dashoffset: 1616.130859375;
         fill: transparent;
-        animation: draw 1s linear forwards;
+        animation: draw 1s ease-in 200ms forwards;
       }
 
       .svg_inside{
         opacity: 0;
-        animation: fade-in 800ms ease-in 1s forwards;
+        animation: fade-in 800ms ease-in 1.2s forwards;
       }
 
       @keyframes fade-in{
@@ -29,9 +29,15 @@
   <body>
       
       <svg version="1.1" id="logo_inside" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 -20 600 600" height="50%" width="50%" xml:space="preserve">
-<path  class="line-drawing" d="M512,256c0,141.385-114.615,256-256,256c-90.441,0-169.925-46.902-215.465-117.708H60
-	c5.523,0,10-4.477,10-10V100c0-5.158-3.906-9.401-8.921-9.94C108.035,34.957,177.93,0,256,0C397.385,0,512,114.615,512,256z"/>
+   viewBox="0 -20 600 600" height="50%" width="50%" xml:space="preserve">
+   <path d="
+        M 256, 256
+        m -256, 0
+        a 256, 256 0 1, 0 512,0
+        a 256, 256 0 1, 0 -512,0
+      "
+      class="line-drawing"
+   ></path>
 <g class="svg_inside">
   <g>
 	<path style="fill:#50C8C8;" d="M472,230h-97.147l-25.317,25.317c-1.953,1.953-5.118,1.953-7.071,0L317.147,230H220
