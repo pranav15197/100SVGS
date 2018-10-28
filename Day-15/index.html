@@ -1,0 +1,22 @@
+<head>
+  <style>
+    #my-rect:hover{
+      filter : none
+    }
+  </style>
+</head>
+<body>
+<svg>
+  <defs>
+    <filter id="f1" x="-10%" y="-10%" height="120%" width="100%">
+      <feGaussianBlur in="SoureGraphic" stdDeviation="15" />
+    </filter>
+  </defs>
+  <rect id="my-rect" x=10 y=10 height=100 width=100 fill="black" filter="url(#f1)"/>
+</svg>
+</body>
+<!--
+  wrapping filter about
+CSS shapes, blend modes and filters
+filter - region, flood, layer
+-->
