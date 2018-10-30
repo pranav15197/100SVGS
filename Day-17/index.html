@@ -21,32 +21,153 @@
       height: 10vw;
       background: rgba(255, 0,0,0.25);
     }
-    p:nth-child(1){
-      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh,0vh,17vh);
-      filter: hue-rotate(35deg);
+    p:nth-child(0) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -102vh);
+      filter: hue-rotate(0deg);
+      animation: slide-6 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-6 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 102vh) scale(0.2);
+      }
+    }
+    p:nth-child(1) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -85vh);
+      filter: hue-rotate(36deg);
+      animation: slide-5 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-5 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 85vh) scale(0.25);
+      }
+    }
+    p:nth-child(2) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -68vh);
+      filter: hue-rotate(72deg);
+      animation: slide-4 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-4 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 68vh) scale(0.3);
+      }
+    }
+    p:nth-child(3) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -51vh);
+      filter: hue-rotate(108deg);
+      animation: slide-3 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-3 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 51vh) scale(0.35);
+      }
+    }
+    p:nth-child(4) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -34vh);
+      filter: hue-rotate(144deg);
+      animation: slide-2 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-2 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 34vh) scale(0.4);
+      }
+    }
+    p:nth-child(5) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -17vh);
+      filter: hue-rotate(180deg);
+      animation: slide-1 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide-1 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 17vh) scale(0.45);
+      }
+    }
+    p:nth-child(6) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 0vh);
+      filter: hue-rotate(216deg);
       animation: slide0 ease-in-out 10s infinite;
     }
+    
     @keyframes slide0 {
       50% {
-        transform: rotateX(45 deg) rotateZ( 45 deg) translate3d(0vh, 0vh, -17vh) scale(1);
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 0vh) scale(0.5);
       }
     }
-
-    p:nth-child(2){
-      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh,0vh,34vh);
-      filter: hue-rotate(70deg);
+    p:nth-child(7) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 17vh);
+      filter: hue-rotate(252deg);
       animation: slide1 ease-in-out 10s infinite;
     }
+    
     @keyframes slide1 {
       50% {
-        transform: rotateX(45 deg) rotateZ( 45 deg) translate3d(0vh, 0vh, -34vh) scale(1.5);
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -17vh) scale(0.55);
       }
     }
+    p:nth-child(8) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 34vh);
+      filter: hue-rotate(288deg);
+      animation: slide2 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide2 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -34vh) scale(0.6);
+      }
+    }
+    p:nth-child(9) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 51vh);
+      filter: hue-rotate(324deg);
+      animation: slide3 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide3 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -51vh) scale(0.65);
+      }
+    }
+    p:nth-child(10) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 68vh);
+      filter: hue-rotate(360deg);
+      animation: slide4 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide4 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -68vh) scale(0.7);
+      }
+    }
+    p:nth-child(11) {
+      transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, 85vh);
+      filter: hue-rotate(396deg);
+      animation: slide5 ease-in-out 10s infinite;
+    }
+    
+    @keyframes slide5 {
+      50% {
+        transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -85vh) scale(0.75);
+      }
+    }
+    
 
   </style>
 </head>
 <body>
   <div class="layers">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
     <p></p>
     <p></p>
   </div>
