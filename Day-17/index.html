@@ -8,7 +8,6 @@
       left: 40vw;
       top: 45vh;
       transform:  scaleY(0.5) scaleX(1.5);
-      animation: scale ease-in-out 10s infinite;
     }
     @keyframes scale{
       50%{
@@ -18,6 +17,7 @@
     p{
       position: absolute;
       width: 10vw;
+      opacity: 0;
       height: 10vw;
       background: rgba(255, 0,0,0.25);
     }
@@ -33,6 +33,7 @@
       }
     }
     p:nth-child(1) {
+      opacity: 1;
       transform: rotateX(45deg) rotateZ(45deg) translate3d(0vh, 0vh, -85vh);
       filter: hue-rotate(36deg);
       animation: slide-5 ease-in-out 10s infinite;
