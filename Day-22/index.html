@@ -1,0 +1,65 @@
+<head>
+    <style>
+      body{
+        margin: 0px;
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        display: flex;
+        color: white;
+        align-items: center;
+        justify-content: center;
+      }
+      .arc:hover{
+        fill: green
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      
+      <svg width=200 height=200>
+          <circle cx=100 cy=100 r=100 fill=red></circle>
+          <path class="arc" v-for="path in paths" :fill="path.color" :d="path.d"></path>
+          <circle cx=100 cy=100 r=80 fill=black></circle>
+      </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          cx: 100,
+          cy: 100,
+          r_i: 80,
+          r_o: 100,
+          arcs: [
+            {
+              angle:60,
+              color:"yellow",
+            },
+            {
+              angle:60,
+              color:"white",
+            }
+          ],
+        },
+        computed: {
+          paths(){
+            paths = []
+            angle_swept= 0
+            for(var i=0;i<this.arcs.length;i++){
+              var theta = angle_swept + this.arcs[i].angle * Math.PI/180
+              path = "M100 100 "
+              path += "L" + (this.cx + this.r_o*Math.sin(angle_swept)) + " " + (this.cy - this.r_o*Math.cos(angle_swept)) 
+              path += "A100 100 0 0 1 " + (this.cx + this.r_o*Math.sin(theta)) + " " + (this.cy - this.r_o*Math.cos(theta)) + " Z"
+              paths.push({d: path, color: this.arcs[i].color})
+              angle_swept += theta
+            }
+            return paths;
+          }
+        }
+
+      })
+    </script>
+  </body>
