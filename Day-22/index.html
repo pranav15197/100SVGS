@@ -10,6 +10,10 @@
         align-items: center;
         justify-content: center;
       }
+      .arc{
+        stroke: blue;
+        stroke-width:3;
+      }
       .arc:hover{
         fill: green
       }
@@ -39,7 +43,7 @@
               color:"yellow",
             },
             {
-              angle:60,
+              angle:90,
               color:"white",
             }
           ],
@@ -52,7 +56,7 @@
               var theta = angle_swept + this.arcs[i].angle * Math.PI/180
               path = "M100 100 "
               path += "L" + (this.cx + this.r_o*Math.sin(angle_swept)) + " " + (this.cy - this.r_o*Math.cos(angle_swept)) 
-              path += "A100 100 0 0 1 " + (this.cx + this.r_o*Math.sin(theta)) + " " + (this.cy - this.r_o*Math.cos(theta)) + " Z"
+              path += "A100 100 0 0 1 " + (this.cx + this.r_o*Math.sin(theta)) + " " + (this.cy - this.r_o*Math.cos(theta)) + " "
               paths.push({d: path, color: this.arcs[i].color})
               angle_swept += theta
             }
