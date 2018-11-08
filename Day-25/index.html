@@ -1,0 +1,45 @@
+<head>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+    }
+    .container{
+      height:100vh;
+      width: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .drawn{
+      stroke-dashoffset:130;
+      stroke-dasharray:130;
+      animation: draw 1s linear forwards;
+    }
+    @keyframes draw{
+      0%{
+        stroke-dashoffset:150;
+        stroke-dasharray:150;
+      }
+      100%{
+        stroke-dashoffset:0;
+        stroke-dasharray:130;
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg height="300" width="300">
+      <path
+        class="drawn"
+        d="M 100 20 A 100 100 0 0 1 200 120"
+        stroke="red"
+        stroke-width="15"
+        fill="transparent"
+      >
+      </path>
+    </svg>
+  </div>
+</body>
