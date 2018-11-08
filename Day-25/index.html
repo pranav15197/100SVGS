@@ -12,20 +12,39 @@
       justify-content: center;
     }
     .drawn{
-      stroke-dashoffset:130;
-      stroke-dasharray:130;
+      stroke-dashoffset:160;
+      stroke-dasharray:160;
       animation: draw 1s linear forwards;
     }
     @keyframes draw{
       0%{
-        stroke-dashoffset:150;
-        stroke-dasharray:150;
+        stroke-dashoffset:160;
+        stroke-dasharray:160;
       }
       100%{
         stroke-dashoffset:0;
-        stroke-dasharray:130;
+        stroke-dasharray:160;
       }
       
+    }
+    .drawn2{
+      stroke-dashoffset:160;
+      stroke-dasharray:160;
+      animation: draw 1s linear 1s forwards;
+    }
+    .drawn3{
+      stroke-dashoffset:160;
+      stroke-dasharray:160;
+      animation: draw 1s linear 2s forwards;
+    }
+    .drawn4{
+      stroke-dashoffset:160;
+      stroke-dasharray:160;
+      animation: draw 1s linear 3s forwards;
+    }
+
+    svg{
+      padding-left: 10px;
     }
   </style>
 </head>
@@ -40,6 +59,28 @@
         fill="transparent"
       >
       </path>
+
+      <path
+        class="drawn2"
+        d="M 200 120 A 100 100 0 0 1 100 220"
+        stroke="green"
+        stroke-width="15"
+        fill="transparent"
+      />
+      <path
+        class="drawn3"
+        d="M 100 220 A 100 100 0 0 1 0 120"
+        stroke="blue"
+        stroke-width="15"
+        fill="transparent"
+      />
+      <path
+        class="drawn4"
+        d="M 0 120 A 100 100 0 0 1 100 20"
+        stroke="black"
+        stroke-width="15"
+        fill="transparent"
+      />
     </svg>
   </div>
 </body>
