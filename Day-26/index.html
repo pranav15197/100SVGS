@@ -1,0 +1,44 @@
+<head>
+  <style>
+    body{
+      padding: 0;
+      margin: 0;
+      
+    }
+    .container{
+      height:100vh;
+      width: 100vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .light{
+      fill:green;
+      animation: traffic 3s linear infinite;
+    }
+
+    @keyframes traffic{
+      33%{
+        fill:orange;
+      }
+      66%{
+        fill:red;
+      }
+      100%{
+        fill:green;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <svg height=200 width=200>
+      <circle cx=100 cy=100 r=100 class="light"></circle>
+    </svg>
+  </div>
+</body>
+<!--
+Learning how to animate color with svg and css
+-->
