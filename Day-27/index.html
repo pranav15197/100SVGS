@@ -1,0 +1,45 @@
+<head>
+    <style>
+      body{
+        padding: 0;
+        margin: 0;
+        
+      }
+      .container{
+        height:100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+     
+  
+    </style>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <span>Value: {{barValue}}<span><br>
+      <svg height=50 width=400>
+        <rect x=10 y=10 :width="barWidth" height=10 fill="red"></rect>
+        <rect y=5 width=10 height=20 :x="barPosition"></rect>
+      </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          barValue: 50,
+          barWidth: 380
+        },
+        computed: {
+          barPosition(){
+            return (this.barValue/100)*this.barWidth + 5
+          }
+        }
+      })
+    </script>
+  </body>
+  <!--
+  Learning how to animate color with svg and css
+  -->
