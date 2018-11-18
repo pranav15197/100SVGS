@@ -14,7 +14,15 @@
       }
       .bar{
         fill: #e0f7fa;
+        stroke: #26c6da;
+        rx: 5;
+        ry: 5;
       }
+      .seeker{
+        rx: 2;
+        ry: 2;
+      }
+
     </style>
   </head>
   <body>
@@ -22,7 +30,7 @@
       <span>Value: {{flooredBarValue}}<span><br>
       <svg height=50 width=400>
         <rect x=10 y=10 :width="barWidth" height=10 class="bar"></rect>
-        <rect y=5 width=10 height=20 :x="barPosition" @mousedown="startTracking"></rect>
+        <rect y=5 width=10 height=20 :x="barPosition" @mousedown="startTracking" class="seeker"></rect>
       </svg>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -59,7 +67,6 @@
               this.start = event.clientX
               console.log("moved "+ moved)
               this.barValue += moved/this.barWidth*100
-              //this.barValue = Math.round(this.barValue)
             }
           }
         },
