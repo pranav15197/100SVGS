@@ -1,0 +1,82 @@
+<head>
+    <style>
+      body{
+        padding: 0;
+        margin: 0;
+        
+      }
+      .container{
+        height:100vh;
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .bar{
+        fill: #e0f7fa;
+        stroke: #26c6da;
+        rx: 5;
+        ry: 5;
+      }
+      .seeker{
+        rx: 2;
+        ry: 2;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container" id="app">
+      <span>Value: {{flooredBarValue}}<span><br>
+      <svg height=50 width=400>
+        <rect x=10 y=10 :width="barWidth" height=10 class="bar"></rect>
+        <rect y=5 width=10 height=20 :x="barPosition" @mousedown="startTracking" class="seeker"></rect>
+      </svg>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          barValue: 50,
+          barWidth: 380,
+          start: 0,
+          tracked: false,
+        },
+        computed: {
+          barPosition(){
+            return (this.barValue/100)*this.barWidth + 5
+          },
+          flooredBarValue(){
+            return Math.floor(this.barValue)
+          }
+        },
+        methods: {
+          startTracking(event){
+            console.log("I'm tracking")
+            this.tracked = true
+            this.start = event.clientX
+          },
+          stopTracking(event){
+            console.log("I'm stopping tracking")
+            this.tracked = false
+          },
+          track(event){
+            if(this.tracked){
+              var moved = event.clientX - this.start
+              this.start = event.clientX
+              console.log("moved "+ moved)
+              this.barValue += moved/this.barWidth*100
+            }
+          }
+        },
+        mounted() {
+          window.addEventListener('mouseup', this.stopTracking);
+          window.addEventListener('mousemove', this.track);
+        }
+      })
+    </script>
+  </body>
+  <!--
+  Learning how to animate color with svg and css
+  -->
