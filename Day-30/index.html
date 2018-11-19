@@ -29,7 +29,7 @@
     <div class="container" id="app">
       <span>Value: {{flooredBarValue}}<span><br>
       <svg height=50 width=400>
-        <rect x=10 y=10 :width="barWidth" height=10 class="bar"></rect>
+        <rect x=10 y=10 :width="barWidth" height=10 class="bar" @click="quickSeek"></rect>
         <rect y=5 width=10 height=20 :x="barPosition" @mousedown="startTracking" class="seeker"></rect>
       </svg>
     </div>
@@ -52,6 +52,10 @@
           }
         },
         methods: {
+          quickSeek(event){
+            console.log(event)
+            this.barValue = (event.offsetX - 10)/380*100
+          },
           startTracking(event){
             console.log("I'm tracking")
             this.tracked = true
