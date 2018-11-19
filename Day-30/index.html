@@ -66,7 +66,14 @@
               var moved = event.clientX - this.start
               this.start = event.clientX
               console.log("moved "+ moved)
-              this.barValue += moved/this.barWidth*100
+              var newVal = this.barValue + moved/this.barWidth*100
+              if(newVal <=0 ){
+                newVal = 0
+              }
+              if(newVal >= 100){
+                newVal = 100
+              }
+              this.barValue = newVal
             }
           }
         },
