@@ -1,0 +1,13 @@
+<div id="app">
+  <seek-bar name="Pranav"></seek-bar>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+  Vue.component('seek-bar', {
+    props:['name'],
+    template:"<h1>{{name}}</h1>"
+  })
+  var app = new Vue({
+    el: "#app"
+  })
+</script>
