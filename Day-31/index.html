@@ -1,3 +1,15 @@
+<style>
+    .bar{
+      fill: #e0f7fa;
+      stroke: #26c6da;
+      rx: 5;
+      ry: 5;
+    }
+    .seeker{
+      rx: 2;
+      ry: 2;
+    }
+  </style>
 <div id="app">
   <seek-bar name="Pranav"></seek-bar>
 </div>
@@ -5,7 +17,18 @@
 <script>
   Vue.component('seek-bar', {
     props:['name'],
-    template:"<h1>{{name}}</h1>"
+    template:'<span>Value: {{flooredBarValue}}<span><br>\
+      <svg height=50 width=400>\
+        <rect x=10 y=10 :width="barWidth" height=10 class="bar" @click="quickSeek"></rect>\
+        <rect y=5 width=10 height=20 :x="barPosition" @mousedown="startTracking" class="seeker"></rect>\
+      </svg>',
+    data:function(){
+      return {
+        flooredBarValue:40,
+        barWidth:380,
+        barPosition:100
+      }
+    } 
   })
   var app = new Vue({
     el: "#app"
