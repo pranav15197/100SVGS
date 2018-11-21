@@ -1,0 +1,10 @@
+.bar{
+  fill: #e0f7fa;
+  stroke: #26c6da;
+  rx: 5;
+  ry: 5;
+}
+.seeker{
+  rx: 2;
+  ry: 2;
+}
