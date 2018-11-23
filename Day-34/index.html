@@ -12,16 +12,24 @@
   </svg>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+
 <script>
 var app = new Vue({
   el: "#app",
   data: {
-    progressAngle: Math.PI * 2/3
+    demo: {
+      angle: Math.PI * 2/3
+    }
   },
   computed: {
     path(){
-      return "M100 50 A50 50 0 0 1 "+ (100 - 50*Math.cos(this.progressAngle)) + " " + (100 + 50*Math.sin(this.progressAngle))
+      var progressAngle = this.demo.angle
+      return "M100 50 A50 50 0 0 1 "+ (100 - 50*Math.cos(progressAngle)) + " " + (100 + 50*Math.sin(progressAngle))
     }
-  }
+  },
+  mounted() {
+    var tween = TweenLite.to(this.demo, 1, {angle: 2*Math.PI})
+  },
 })
 </script>
