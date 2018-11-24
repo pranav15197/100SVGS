@@ -7,7 +7,6 @@
   }
 </style>
 <div id="app">
-  {{demo.angle}}<br>
   <svg width=200 height=200>
     <path :d="path" stroke-width=5 stroke="blue" fill="transparent"></path>
   </svg>
@@ -25,12 +24,18 @@ var app = new Vue({
   },
   computed: {
     path(){
+      if(this.demo.angle < Math.PI) {
+        largeArg = 0;
+      }
+      else{
+        largeArg = 1;
+      }
       var progressAngle = this.demo.angle
-      return "M100 50 A50 50 0 0 1 "+ (100 + 50*Math.sin(progressAngle)) + " " + (100 - 50*Math.cos(progressAngle))
+      return "M100 50 A50 50 0 "+ largeArg+" 1 "+ (100 + 50*Math.sin(progressAngle)) + " " + (100 - 50*Math.cos(progressAngle))
     }
   },
   mounted() {
-    var tween = TweenLite.to(this.demo, 10, {angle: 2*Math.PI})
+    var tween = TweenLite.to(this.demo, 1, {angle: 2*Math.PI - 0.001 })
   },
 })
 </script>
