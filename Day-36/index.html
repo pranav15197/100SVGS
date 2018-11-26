@@ -37,7 +37,9 @@ var app = new Vue({
     }
   },
   mounted() {
-    var tween = TweenLite.to(this.demo, 1, {angle: 2*Math.PI - 0.001, opacity: 1 })
+    var tween = TweenLite.to(this.demo, 1, {angle: 2*Math.PI - 0.001}, onComplete: ()=>{
+      TweenLite.to(this.demo, 2, {opacity: 1})
+    })
   },
 })
 </script>
