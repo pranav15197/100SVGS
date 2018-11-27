@@ -1,0 +1,69 @@
+<style>
+  #app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .circle1{
+    animation: showmove1 2s linear forwards;
+  }
+  .circle2{
+    animation: showmove2 2s linear forwards;
+    opacity:0;
+  }
+
+  @keyframes showmove1{
+    0% {
+      cx:200;
+      cy:200;
+      opacity:0
+    }
+    20% {
+      cx:200;
+      cy:200;
+      opacity:1
+    }
+    100% {
+      cx:250;
+      cy:150;
+      opacity:1
+    }
+    
+  }
+
+  @keyframes showmove2{
+    0% {
+      cx:200;
+      cy:200;
+      opacity:0
+    }
+    20% {
+      cx:200;
+      cy:200;
+      opacity:1
+    }
+    100% {
+      cx:150;
+      cy:250;
+      opacity:1
+    }
+    
+  }
+  
+</style>
+<div id="app">
+  <svg height=400 width=400>
+
+    <circle cx=200 cy=200 r=50 fill="green" class="circle2"></circle>
+    <circle cx=200 cy=200 r=50 fill="red" class="circle1"></circle>
+  </svg>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+<script>
+var app = new Vue({
+  el: "#app",
+  data: {}
+})
+</script>
