@@ -22,6 +22,12 @@
       transform: translateX(-10px);
       animation: movingCloud 3s linear infinite;
     }
+    .cloud2{
+      
+      transform: translateX(-10px);
+      animation: movingCloud 3s linear infinite;
+      animation-delay:1s;
+    }
     @keyframes movingCloud{
       0% {
         transform: translateX(0px);
@@ -38,7 +44,7 @@
   <div class="container" id="app">
     <svg height=200 width=200 class="canvas">
       <rect x=180 y=10 height=10 width=20 class="cloud"></rect>
-      <rect x=200 y=20 height=10 width=20 class="cloud"></rect>
+      <rect x=200 y=20 height=10 width=20 class="cloud2"></rect>
     </svg>
   </div>
 </body>
