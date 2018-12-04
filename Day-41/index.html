@@ -1,0 +1,64 @@
+<head>
+  <style>
+    html, body{
+      margin: 0px;
+      padding: 0px;
+    }
+    .container{
+      background: green;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .canvas{
+      background-color: white;
+    }
+
+    .cloud{
+      
+      transform: translateX(-10px);
+      animation: movingCloud 3s linear infinite;
+    }
+    .cloud2{
+      
+      transform: translateX(0px);
+      animation: movingCloud 3s linear infinite;
+      animation-delay:1s;
+    }
+    @keyframes movingCloud{
+      0% {
+        transform: translateX(0px);
+      }
+      100% {
+        transform: translateX(-210px);
+      }
+
+    }
+
+    .ship{
+      stroke: "blue";
+      stroke-width: 4;
+      transform: translateY(20px);
+      animation: movingShip 2s ease-in-out alternate infinite;
+    }
+
+    @keyframes movingShip{
+      50% {
+        transform: translateY(0px);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container" id="app">
+    <svg height=200 width=200 class="canvas">
+      <rect x=180 y=10 height=10 width=20 class="cloud"></rect>
+      <rect x=60 y=60 fill="red" height=40 width=40 class="ship" stroke="blue"></rect>
+      <rect x=200 y=130 height=10 width=20 class="cloud2"></rect>
+    </svg>
+  </div>
+</body>
