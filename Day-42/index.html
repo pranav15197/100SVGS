@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title></title>
+    <style>
+    body, html{
+      margin: 0;
+      padding: 0;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100vw;
+    }
+    .loading_button{
+      color: white;
+      font-size: 1.2em;
+      padding: 16px;
+      background-color: gray;
+      animation: bouncing 1s cubic-bezier(0.1,0.25,0.1,1) 0s infinite alternate both;
+    }
+
+    @keyframes bouncing{
+      0%{
+        bottom: 0px;
+        font-size: 1.2em;
+      }
+      100%{
+        bottom: 50px;
+        font-size: 2em;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <button class="loading_button">
+        Loading..
+      </button>
+    </div>
+  </body>
+</html>
+<!--
+   What does fill mode both mean?
+   fill-mode means -
+  what styles are applied before the animation starts and after it ends
+-->
