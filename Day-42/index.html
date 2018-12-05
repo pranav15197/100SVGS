@@ -23,12 +23,15 @@
 
     @keyframes bouncing{
       0%{
-        bottom: 0px;
+        margin-bottom: 0px;
         font-size: 1.2em;
+        box-shadow: 0 0 5px rgba(0,0,0,0.5);
       }
       100%{
-        bottom: 50px;
+        margin-bottom: 50px;
         font-size: 2em;
+
+        box-shadow: 0 50px 50px rgba(0,0,0,0.5);
       }
     }
     </style>
@@ -45,4 +48,6 @@
    What does fill mode both mean?
    fill-mode means -
   what styles are applied before the animation starts and after it ends
+
+  cubic bezeir gives a bouncing effect
 -->
